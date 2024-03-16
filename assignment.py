@@ -117,9 +117,53 @@
 # Task 2: Write a function that quizzes the user and takes their answers.
 # Task 3: Score the quiz and give the user feedback on their performance.
 
-questions = ["What is the capital of the United States?", "What is the capital of Colorado?", "What is the capital of Illinois?"]
+# questions = ["What is the capital of the United States?", "What is the capital of Colorado?", "What is the capital of Illinois?"]
+# answers = ["Washington, D.C.", "Denver", "Springfield"]
 
-while(True):
+# i = 0
+
+# while(i < len(questions)):
+#     print(questions[i])
+#     inp = input("Please enter an answer: ")
+
+#     if inp != answers[i]:
+#         print("Incorrect answer! Please try again")
+#     else:
+#         i += 1
+
+# 5. The Fitness Tracker
+
+# Objective:
+# The aim of this assignment is to create a program that tracks fitness activities and calories burned.
+
+# Task 1: Develop a function to log different fitness activities and their duration. For instance, activities = [’Dancing’, ‘Swimming’, ‘Biking’] and duration = [10, 20, 15] where Dancing corresponds to 10 minutes, Swimming corresponds to 20 minutes, and Biking corresponds to 15 minutes.
+
+# Task 2: Write a simple function that estimates calories burned based on the activity and duration. For instance, Total calories burned = Duration (in minutes)*3.5
+
+# Task 3: Create a summary function that provides a report of all activities and total calories burned for the day.
+
+activities = ["Running", "Walking", "Swimming", "Lifting"]
+durations = [10, 20, 10, 30]
+
+def logActivitiesAndDuration(activities, durations):
     i = 0
-    print(questions[i])
-    inp = input()
+    while i < len(activities):
+        print(activities[i], durations[i])
+        i += 1
+
+logActivitiesAndDuration(activities, durations)
+
+def caloriesBurned(duration):
+    return 3.5 * duration
+
+for duration in durations:
+    print(caloriesBurned(duration))
+
+def logActivitiesAndDurationAndTotalCalories(activities, durations):
+    i = 0
+    while i < len(activities):
+        print(activities[i], durations[i])
+        i += 1
+    print("Total calories burned is equal to:", 3.5 * sum(durations))
+
+logActivitiesAndDurationAndTotalCalories(activities, durations)
