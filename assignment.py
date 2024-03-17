@@ -7,31 +7,31 @@
 # Task 2: Implement user input to receive numbers and an operation choice.
 # Task 3: Ensure your program can handle division by zero and other potential errors.
 
-# while(True):
-#     print("Welcome to The Calculator App")
-#     num1 = int(input("Please enter a number: "))
-#     op = input("Please enter an operation, (A)ddition, (S)ubtraction, (M)ultiplication, or (D)ivision: ").upper()
-#     num2 = int(input("Please enter a number: "))
+while(True):
+    print("Welcome to The Calculator App")
+    num1 = int(input("Please enter a number: "))
+    op = input("Please enter an operation, (A)ddition, (S)ubtraction, (M)ultiplication, or (D)ivision: ").upper()
+    num2 = int(input("Please enter a number: "))
 
-#     if op == 'A':
-#         print(num1 + num2)
-#     elif op == 'S':
-#         print(num1 - num2)
-#     elif op == 'M':
-#         print(num1 * num2)
-#     elif op == 'D':
-#         if num2 == 0:
-#             print("Error! We cannot divide by 0.")
-#         else:
-#             print(num1 / num2)
-#     else:
-#         print("Please enter a valid operator.")
+    if op == 'A':
+        print(num1 + num2)
+    elif op == 'S':
+        print(num1 - num2)
+    elif op == 'M':
+        print(num1 * num2)
+    elif op == 'D':
+        if num2 == 0:
+            print("Error! We cannot divide by 0.")
+        else:
+            print(num1 / num2)
+    else:
+        print("Please enter a valid operator.")
     
-#     inp = input("Enter (C)ontinue or (Q)uit: ").upper()
-#     if inp == 'Q':
-#         break
-#     else:
-#         pass
+    inp = input("Enter (C)ontinue or (Q)uit: ").upper()
+    if inp == 'Q':
+        break
+    else:
+        pass
 
 # 2. The Shopping List Maker
 
@@ -42,30 +42,32 @@
 # Task 2: Include a feature to remove items from the list.
 # Task 3: Add a function that prints out the entire list in a formatted way.
     
-# item_list = []
+item_list = []
 
-# def addItem(item):
-#     item_list.append(item)
+def add_item(item):
+    item_list.append(item)
 
-# def removeItem(item):
-#     if item in item_list:
-#         item_list.remove(item)
-#     else:
-#         print("Item not found in the item list!")
+def remove_item(item):
+    if item in item_list:
+        item_list.remove(item)
+    else:
+        print("Item not found in the item list!")
 
-# while(True):
-#     inp = input("Enter (A)dd an item, (R)emove an item, or (P)rint item list: ").upper()
-#     if(inp == 'A'):
-#         item_to_add = input("Please enter an item to add: ")
-#         addItem(item_to_add)
-#     elif(inp == 'R'):
-#         item_to_remove = input("Please enter an item to remove: ")
-#         removeItem(item_to_remove)
-#     elif(inp == 'P'):
-#         for item in item_list:
-#             print(item)
-#     else:
-#         print("Please enter a valid input.")
+while(True):
+    inp = input("Enter (A)dd an item, (R)emove an item, (P)rint item list, or (Q)uit: ").upper()
+    if(inp == 'A'):
+        item_to_add = input("Please enter an item to add: ")
+        add_item(item_to_add)
+    elif(inp == 'R'):
+        item_to_remove = input("Please enter an item to remove: ")
+        remove_item(item_to_remove)
+    elif(inp == 'P'):
+        for item in item_list:
+            print(item)
+    elif(inp == 'Q'):
+        break
+    else:
+        print("Please enter a valid input.")
 
 # 3. The Grade Analyzer
 
@@ -76,37 +78,37 @@
 # Task 2: Implement a function to find the highest and lowest grade.
 # Task 3: Create a feature that categorizes grades into letter grades (A, B, C, etc.).
 
-# grades = [80, 93, 64, 91, 75]
-# letters = [] * len(grades)
+grades = [80, 93, 64, 91, 75]
+letters = [] * len(grades)
 
-# def findAverageGrade(grades):
-#     if(len(grades) > 0):
-#         print(sum(grades) / len(grades))
-#     else:
-#         print("Please use a list of grades that is not empty!")
+def find_average_grade(grades):
+    if(len(grades) > 0):
+        print(sum(grades) / len(grades))
+    else:
+        print("Please use a list of grades that is not empty!")
 
-# def findLowestAndHighestGrade(grades):
-#     print(min(grades), max(grades))
+def find_lowest_and_highest_grades(grades):
+    print(min(grades), max(grades))
 
-# def categorizeGrades(grades):
-#     for i in range(0, len(grades)):
-#         val = grades[i]
-#         if val >= 90:
-#             letters.append('A')
-#         elif val >= 80:
-#             letters.append('B')
-#         elif val >= 70:
-#             letters.append('C')
-#         elif val >= 60:
-#             letters.append('D')
-#         else:
-#             letters.append('F')
-#     for letter in letters:
-#         print(letter)
+def categorize_grades(grades):
+    for i in range(0, len(grades)):
+        val = grades[i]
+        if val >= 90:
+            letters.append('A')
+        elif val >= 80:
+            letters.append('B')
+        elif val >= 70:
+            letters.append('C')
+        elif val >= 60:
+            letters.append('D')
+        else:
+            letters.append('F')
+    for letter in letters:
+        print(letter)
 
-# findAverageGrade(grades)
-# findLowestAndHighestGrade(grades)
-# categorizeGrades(grades)
+find_average_grade(grades)
+find_lowest_and_highest_grades(grades)
+categorize_grades(grades)
 
 # 4. The Quiz Game
 
@@ -117,19 +119,19 @@
 # Task 2: Write a function that quizzes the user and takes their answers.
 # Task 3: Score the quiz and give the user feedback on their performance.
 
-# questions = ["What is the capital of the United States?", "What is the capital of Colorado?", "What is the capital of Illinois?"]
-# answers = ["Washington, D.C.", "Denver", "Springfield"]
+questions = ["What is the capital of the United States?", "What is the capital of Colorado?", "What is the capital of Illinois?"]
+answers = ["Washington, D.C.", "Denver", "Springfield"]
 
-# i = 0
+i = 0
 
-# while(i < len(questions)):
-#     print(questions[i])
-#     inp = input("Please enter an answer: ")
+while(i < len(questions)):
+    print(questions[i])
+    inp = input("Please enter an answer: ")
 
-#     if inp != answers[i]:
-#         print("Incorrect answer! Please try again")
-#     else:
-#         i += 1
+    if inp != answers[i]:
+        print("Incorrect answer! Please try again")
+    else:
+        i += 1
 
 # 5. The Fitness Tracker
 
@@ -145,25 +147,25 @@
 activities = ["Running", "Walking", "Swimming", "Lifting"]
 durations = [10, 20, 10, 30]
 
-def logActivitiesAndDuration(activities, durations):
+def log_activities_and_duration(activities, durations):
     i = 0
     while i < len(activities):
         print(activities[i], durations[i])
         i += 1
 
-logActivitiesAndDuration(activities, durations)
+log_activities_and_duration(activities, durations)
 
-def caloriesBurned(duration):
+def calories_burned(duration):
     return 3.5 * duration
 
 for duration in durations:
-    print(caloriesBurned(duration))
+    print(calories_burned(duration))
 
-def logActivitiesAndDurationAndTotalCalories(activities, durations):
+def log_activities_and_duration_and_total_calories(activities, durations):
     i = 0
     while i < len(activities):
         print(activities[i], durations[i])
         i += 1
     print("Total calories burned is equal to:", 3.5 * sum(durations))
 
-logActivitiesAndDurationAndTotalCalories(activities, durations)
+log_activities_and_duration_and_total_calories(activities, durations)
